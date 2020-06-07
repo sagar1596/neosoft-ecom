@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import {ReactComponent as Logo} from '../../assets/crown.svg';
+import {ReactComponent as Logo} from '../../assets/logo.svg';
 import './header.styles.scss';
 
 import CartIcon from '../cart-icon/cart-icon.component';
