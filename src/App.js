@@ -19,6 +19,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
 
+
 class App extends React.Component {
 
   render(){ 
