@@ -15,8 +15,6 @@ import { selectCartHidden } from '../../redux/cart/cart.selectors';
 
 import { signOutStart } from '../../redux/user/user.actions';
 
-import { auth } from '../../firebase/firebase.utils';
-
 const Header = ({ currentUser, hidden, signOutStart }) => (
     <div className="header">
         <Link to="/" className="logo-container">

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import Homepage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.component';
@@ -18,9 +18,12 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 
 
 
-class App extends React.Component {
+const App = ({ currentUser, checkUserSession }) => {
 
-  render(){ 
+  useEffect(() => {
+    checkUserSession()
+  }, [checkUserSession]);
+
     return (
       <div>
         <Header />
@@ -32,25 +35,12 @@ class App extends React.Component {
             exact 
             path="/signin" 
             render={() => 
-              (this.props.currentUser ? 
+              (currentUser ? 
                 (<Redirect to="/" />) : 
                 (<SignInAndSignUpPage />))} />
         </Switch>
         </div>
     );
-  }
-
-  unsubscribeFromAuth = null;
-
-  componentDidMount() {
-    const { checkUserSession } = this.props;
-
-    checkUserSession();
-  }
-
-  componentWillUnmount() {
-    this.unsubscribeFromAuth();
-  }
 
 }
 
